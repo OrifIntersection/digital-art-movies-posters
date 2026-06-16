@@ -1,4 +1,6 @@
 import './style.css'
+(function() {
+    let requete;
 class Rectangle {
     constructor(x, y, width, height, color) {
         this.x = x;
@@ -21,16 +23,27 @@ class Rectangle {
     }
 }
 
-const canvas = document.getElementById("MoviePoster");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
 const shapes = [
     new Rectangle(50, 50, 100, 80, "orange"),
     new Rectangle(200, 120, 120, 60, "purple"),
 ];
+  const canvas = document.getElementById('MoviePoster');
+  const ctx = canvas.getContext('2d');
+ 
+  // resize the canvas to fill browser window dynamically
+  window.addEventListener('resize', resizeCanvas, false);
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    /**
+     * Your drawings need to be inside this function otherwise they will be reset when 
+     * you resize the browser window and the canvas goes will be cleared.
+     */
+    cancelAnimationFrame(requete)
+    render();
 
+  }
+  resizeCanvas();
 function render() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); 
 
@@ -38,6 +51,6 @@ function render() {
         shape.update();
         shape.draw(ctx);
     });
-    requestAnimationFrame(render);
+    requete = requestAnimationFrame(render);
 }
-render();
+})();
