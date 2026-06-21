@@ -1,8 +1,16 @@
+// Imports
 import "./style.css";
 import moviesData from '../data/movies.json';
 
+// DOM Elements
 const grid = document.getElementById('movies-grid');
+const editor = document.getElementById('editor');
+const configurator = document.getElementById('configurator');
+const backButton = document.getElementById('back-button');
+const canvas = document.getElementById('poster-canvas');
+const ctx = canvas.getContext && canvas.getContext('2d');
 
+// Movies list rendering
 function renderMovies() {
   grid.innerHTML = '';
 
@@ -45,9 +53,67 @@ function renderMovies() {
       </div>
     `;
 
+    const img = card.querySelector('.poster-img');
+    if (img) {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => openEditor(movie, posterPath));
+    }
+
     grid.appendChild(card);
   });
 }
 
-// Lancement au chargement du script
+// Editor & canvas rendering
+function openEditor(movie, posterPath) {
+  // hide grid and show editor
+  grid.style.display = 'none';
+  editor.classList.remove('hidden');
+  editor.setAttribute('aria-hidden', 'false');
+
+  populateConfigurator(movie, posterPath);
+  renderCanvasPreview(movie, posterPath);
+}
+
+function closeEditor() {
+  editor.classList.add('hidden');
+  editor.setAttribute('aria-hidden', 'true');
+  grid.style.display = '';
+}
+
+backButton && backButton.addEventListener('click', closeEditor);
+
+function populateConfigurator(movie, posterPath) {
+  configurator.innerHTML = `
+    <h3>${movie.title}</h3>
+    <div class="config-row"><strong>Année :</strong><span style="margin-left:8px">${movie.releaseYear}</span></div>
+
+    <div>
+      <label class="config-row"><span>Primary</span><input class="color-input" id="color-primary" type="color" value="${movie.primaryColor}" title="Primary color"></label>
+    </div>
+    <div>
+      <label class="config-row"><span>Secondary</span><input class="color-input" id="color-secondary" type="color" value="${movie.secondaryColor}" title="Secondary color"></label>
+    </div>
+    <div>
+      <label class="config-row"><span>Accent</span><input class="color-input" id="color-accent" type="color" value="${movie.accentColor}" title="Accent color"></label>
+    </div>
+  `;
+
+  const primaryColorInput = document.getElementById('color-primary');
+  const secondaryColorInput = document.getElementById('color-secondary');
+  const accentColorInput = document.getElementById('color-accent');
+
+  [primaryColorInput, secondaryColorInput, accentColorInput].forEach(input => {
+    if (!input) return;
+    input.addEventListener('input', () => renderCanvasPreview({ ...movie, primaryColor: primaryColorInput.value, secondaryColor: secondaryColorInput.value, accentColor: accentColorInput.value }, posterPath));
+  });
+}
+
+function renderCanvasPreview(movie, posterPath) {
+  if (!ctx) return;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  // Code du canvas ici 
+}
+ 
+// Launch the app
 renderMovies();

@@ -9,7 +9,22 @@
   <body>
     <div class="container">
       <h1>Digital Art : Affiches de film animées</h1>
-      <main id="movies-grid" class="movies-grid"></main>
+      <div class="app-layout">
+        <main id="movies-grid" class="movies-grid"></main>
+
+        <aside id="editor" class="editor hidden" aria-hidden="true">
+          <button id="back-button" class="back-btn">← Retour</button>
+          <div class="editor-inner">
+            <section class="configurator" id="configurator">
+              <!-- configurator injected via JS -->
+            </section>
+
+            <div class="canvas-wrapper">
+              <canvas id="poster-canvas" width="1080" height="1600"></canvas>
+            </div>
+          </div>
+        </aside>
+      </div>
     </div>
 
     <script type="module" src="/src/main.js"></script>
