@@ -1,0 +1,58 @@
+[
+    {
+        "id": "matrix",
+        "title": "The Matrix",
+        "releaseYear": 1999,
+        "primaryColor": "#35C87B",
+        "secondaryColor": "#0B130E",
+        "accentColor": "#E5E6E0"
+    },
+    {
+        "id": "tron-legacy",
+        "title": "Tron Legacy",
+        "releaseYear": 2010,
+        "primaryColor": "#04151C",
+        "secondaryColor": "#00B5B5",
+        "accentColor": "#EFFFFF"
+    },
+    {
+        "id": "star-wars",
+        "title": "Star wars: a new hope",
+        "releaseYear": 1977,
+        "primaryColor": "#07060B",
+        "secondaryColor": "#D07A3C",
+        "accentColor": "#3C61B8"
+    },
+    {
+        "id": "interstellar",
+        "title": "Interstellar",
+        "releaseYear": 2014,
+        "primaryColor": "#D2D7DF", 
+        "secondaryColor": "#3C434A",
+        "accentColor": "#AC6F47"
+    },
+    {
+        "id": "the-lord-of-the-rings",
+        "title": "The Lord Of The Rings: The Fellowship of the Ring",
+        "releaseYear": 2001,
+        "primaryColor": "#CDBC97",
+        "secondaryColor": "#121915",
+        "accentColor": "#354D31"
+    },
+    {
+        "id": "la-la-land",
+        "title": "La La Land",
+        "releaseYear": 2016,
+        "primaryColor": "#13005A",
+        "secondaryColor": "#FFFFFF",
+        "accentColor": "#F4D100"
+    },
+     {
+        "id": "the-grand-budapest-hotel",
+        "title": "The Grand Budapest Hotel",
+        "releaseYear": 2014,
+        "primaryColor": "#AC93A5",
+        "secondaryColor": "#F2B2CD",
+        "accentColor": "#A63B5A"
+    }
+]
