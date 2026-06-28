@@ -1,27 +1,13 @@
 import renderCanvasPreview from './renderCanvasPreview.js';
 import { initPlayer } from './musicPlayer.js';
+import { renderConfiguratorMarkup } from '../../components/ConfiguratorView.js';
 
 const configuratorContainer = document.getElementById('configurator');
 
 export default function populateConfigurator(movie, posterPath) {
   if (!configuratorContainer) return;
 
-  configuratorContainer.innerHTML = `
-    <h3>${movie.title}</h3>
-    <div class="config-row"><strong>Année :</strong><span style="margin-left:8px">${movie.releaseYear}</span></div>
-
-    <div>
-      <label class="config-row"><span>Primary</span><input class="color-input" id="color-primary" type="color" value="${movie.primaryColor}" title="Primary color"></label>
-    </div>
-    <div>
-      <label class="config-row"><span>Secondary</span><input class="color-input" id="color-secondary" type="color" value="${movie.secondaryColor}" title="Secondary color"></label>
-    </div>
-    <div>
-      <label class="config-row"><span>Accent</span><input class="color-input" id="color-accent" type="color" value="${movie.accentColor}" title="Accent color"></label>
-    </div>
-
-    <div id="spotify-player-container" class="spotify-player-container"></div>
-  `;
+  configuratorContainer.innerHTML = renderConfiguratorMarkup(movie);
 
   const primaryColorInput = document.getElementById('color-primary');
   const secondaryColorInput = document.getElementById('color-secondary');
