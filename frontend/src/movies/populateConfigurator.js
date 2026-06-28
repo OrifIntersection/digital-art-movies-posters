@@ -1,4 +1,5 @@
 import renderCanvasPreview from "./renderCanvasPreview";
+import { initPlayer } from "./musicPlayer";
 
 const configuratorContainer = document.getElementById('configurator');
 
@@ -16,6 +17,8 @@ export default function populateConfigurator(movie, posterPath) {
     <div>
       <label class="config-row"><span>Accent</span><input class="color-input" id="color-accent" type="color" value="${movie.accentColor}" title="Accent color"></label>
     </div>
+
+    <div id="spotify-player-container" class="spotify-player-container"></div>
   `;
 
     const primaryColorInput = document.getElementById('color-primary');
@@ -26,4 +29,10 @@ export default function populateConfigurator(movie, posterPath) {
         if (!input) return;
         input.addEventListener('input', () => renderCanvasPreview({ ...movie, primaryColor: primaryColorInput.value, secondaryColor: secondaryColorInput.value, accentColor: accentColorInput.value }, posterPath));
     });
+
+    // Initialize Spotify soundtrack player
+    const playerContainer = document.getElementById('spotify-player-container');
+    if (playerContainer) {
+        initPlayer(movie, playerContainer);
+    }
 }
