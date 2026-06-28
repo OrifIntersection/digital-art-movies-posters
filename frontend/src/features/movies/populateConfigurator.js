@@ -1,10 +1,12 @@
-import renderCanvasPreview from "./renderCanvasPreview";
-import { initPlayer } from "./musicPlayer";
+import renderCanvasPreview from './renderCanvasPreview.js';
+import { initPlayer } from './musicPlayer.js';
 
 const configuratorContainer = document.getElementById('configurator');
 
 export default function populateConfigurator(movie, posterPath) {
-    configuratorContainer.innerHTML = `
+  if (!configuratorContainer) return;
+
+  configuratorContainer.innerHTML = `
     <h3>${movie.title}</h3>
     <div class="config-row"><strong>Année :</strong><span style="margin-left:8px">${movie.releaseYear}</span></div>
 
@@ -21,18 +23,17 @@ export default function populateConfigurator(movie, posterPath) {
     <div id="spotify-player-container" class="spotify-player-container"></div>
   `;
 
-    const primaryColorInput = document.getElementById('color-primary');
-    const secondaryColorInput = document.getElementById('color-secondary');
-    const accentColorInput = document.getElementById('color-accent');
+  const primaryColorInput = document.getElementById('color-primary');
+  const secondaryColorInput = document.getElementById('color-secondary');
+  const accentColorInput = document.getElementById('color-accent');
 
-    [primaryColorInput, secondaryColorInput, accentColorInput].forEach(input => {
-        if (!input) return;
-        input.addEventListener('input', () => renderCanvasPreview({ ...movie, primaryColor: primaryColorInput.value, secondaryColor: secondaryColorInput.value, accentColor: accentColorInput.value }, posterPath));
-    });
+  [primaryColorInput, secondaryColorInput, accentColorInput].forEach(input => {
+    if (!input) return;
+    input.addEventListener('input', () => renderCanvasPreview({ ...movie, primaryColor: primaryColorInput.value, secondaryColor: secondaryColorInput.value, accentColor: accentColorInput.value }, posterPath));
+  });
 
-    // Initialize Spotify soundtrack player
-    const playerContainer = document.getElementById('spotify-player-container');
-    if (playerContainer) {
-        initPlayer(movie, playerContainer);
-    }
+  const playerContainer = document.getElementById('spotify-player-container');
+  if (playerContainer) {
+    initPlayer(movie, playerContainer);
+  }
 }

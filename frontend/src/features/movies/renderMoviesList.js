@@ -1,9 +1,11 @@
-import moviesData from '../../data/movies.json';
-import openEditor from "./openEditor";
+import moviesData from '../../../data/movies.json';
+import openEditor from './openEditor.js';
 
 const listContainer = document.getElementById('movies-grid');
 
-export default function renderMoviesList() {
+export function renderMoviesList() {
+  if (!listContainer) return;
+
   listContainer.innerHTML = '';
 
   moviesData.forEach(movie => {
@@ -54,3 +56,5 @@ export default function renderMoviesList() {
     listContainer.appendChild(card);
   });
 }
+
+export default renderMoviesList;

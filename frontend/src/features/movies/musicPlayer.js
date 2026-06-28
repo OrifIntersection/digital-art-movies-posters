@@ -1,4 +1,4 @@
-import { getAccessToken } from '../spotifyAuth.js';
+import { getAccessToken } from '../../services/spotifyAuth.js';
 
 // ─── Singleton SDK state ─────────────────────────────────────────────────────
 let sdkPlayer = null;
