@@ -5,7 +5,8 @@
         "releaseYear": 1999,
         "primaryColor": "#35C87B",
         "secondaryColor": "#0B130E",
-        "accentColor": "#E5E6E0"
+        "accentColor": "#E5E6E0",
+        "spotifyTrackId": "1FwhTB4R0lOWII5tc6cl9P"
     },
     {
         "id": "tron-legacy",
@@ -13,7 +14,8 @@
         "releaseYear": 2010,
         "primaryColor": "#04151C",
         "secondaryColor": "#00B5B5",
-        "accentColor": "#EFFFFF"
+        "accentColor": "#EFFFFF",
+        "spotifyTrackId": "09TlxralXOGX35LUutvw7I"
     },
     {
         "id": "star-wars",
@@ -21,15 +23,17 @@
         "releaseYear": 1977,
         "primaryColor": "#07060B",
         "secondaryColor": "#D07A3C",
-        "accentColor": "#3C61B8"
+        "accentColor": "#3C61B8",
+        "spotifyTrackId": "2wi6V9TPFAqciBWQ2FmD7o"
     },
     {
         "id": "interstellar",
         "title": "Interstellar",
         "releaseYear": 2014,
-        "primaryColor": "#D2D7DF", 
+        "primaryColor": "#D2D7DF",
         "secondaryColor": "#3C434A",
-        "accentColor": "#AC6F47"
+        "accentColor": "#AC6F47",
+        "spotifyTrackId": "6pWgRkpqVfxnj3WuIcJ7WP"
     },
     {
         "id": "the-lord-of-the-rings",
@@ -37,7 +41,8 @@
         "releaseYear": 2001,
         "primaryColor": "#CDBC97",
         "secondaryColor": "#121915",
-        "accentColor": "#354D31"
+        "accentColor": "#354D31",
+        "spotifyTrackId": "6zW80jVqLtgSF1yCtGHiiD"
     },
     {
         "id": "la-la-land",
@@ -45,14 +50,16 @@
         "releaseYear": 2016,
         "primaryColor": "#13005A",
         "secondaryColor": "#FFFFFF",
-        "accentColor": "#F4D100"
+        "accentColor": "#F4D100",
+        "spotifyTrackId": "5kRBzRZmZTXVg8okC7SJFZ"
     },
-     {
+    {
         "id": "the-grand-budapest-hotel",
         "title": "The Grand Budapest Hotel",
         "releaseYear": 2014,
         "primaryColor": "#AC93A5",
         "secondaryColor": "#F2B2CD",
-        "accentColor": "#A63B5A"
+        "accentColor": "#A63B5A",
+        "spotifyTrackId": "1uNhvxpkPrNHUNfeclo6xD"
     }
 ]
