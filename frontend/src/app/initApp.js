@@ -49,5 +49,4 @@ async function initApp() {
   renderMoviesList();
 }
 
-initApp();
 export default initApp;

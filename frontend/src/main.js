@@ -1,5 +1,8 @@
 // Imports
-import "./style.css";
+import "./style.css"; 
+import initApp from "./app/initApp";
+initApp()
+/*
 import moviesData from "../data/movies.json";
 
 // DOM Elements
@@ -233,3 +236,4 @@ window.addEventListener("resize", () => {
 // Start app
 // =========================
 renderMovies();
+*/
