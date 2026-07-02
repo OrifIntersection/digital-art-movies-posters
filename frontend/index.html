@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Art : Affiches de film animées</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="app-header">
+        <h1>Digital Art : Affiches de film animées</h1>
+        <div id="spotify-auth-container" class="spotify-auth-widget"></div>
+      </header>
+      <div class="app-layout">
+        <main id="movies-grid" class="movies-grid"></main>
+
+        <aside id="editor" class="editor hidden" aria-hidden="true">
+          <button id="back-button" class="back-btn">← Retour</button>
+          <div class="editor-inner">
+            <section class="configurator" id="configurator">
+              <!-- configurator injected via JS -->
+            </section>
+
+            <div class="canvas-wrapper">
+              <canvas id="poster-canvas" width="1080" height="1600"></canvas>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Spotify Web Playback SDK (must load before main module) -->
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

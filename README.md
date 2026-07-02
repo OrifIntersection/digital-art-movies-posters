@@ -1,1 +1,3 @@
-# digital-art-movies-posters
+cd frontend
+npm install
+npm run dev
